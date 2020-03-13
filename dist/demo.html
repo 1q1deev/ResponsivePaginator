@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<title>responsivePagination demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./responsivePagination.umd.js"></script>
+
+<div id="app">
+  <demo 
+    ref="ResponsivePaginationRef"
+    v-bind:total-items-prop="1000"
+    v-bind:class="'is-green'"></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: responsivePagination
+  }
+}).$mount('#app')
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+.responsive-pagination.is-green a {
+  background-color: hsl(143, 100%, 34%);
+  border-color: hsl(143, 100%, 34%);
+  color: white;
+}
+
+.responsive-pagination.is-green a.is-active {
+  background-color: white;
+  border-color: hsl(143, 100%, 34%);
+  color: hsl(143, 100%, 34%);
+}
+</style>

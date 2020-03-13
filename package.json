@@ -1,12 +1,29 @@
 {
   "name": "responsive-pagination",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.3",
+  "description": "vuejs Responsive pagination",
+  "keywords": [
+    "pagination",
+    "vue"
+  ],
+  "author": {
+    "name": "1q1deev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1q1deev/ResponsivePaginator.git"
+  },
+  "private": false,
+  "files": ["dist"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint --fix",
+    "build:npm": "vue-cli-service build --target lib --name responsivePagination src/ResponsivePagination.vue"
   },
+  "main": "dist/responsivePagination.umd.js",
+  "unpkg": "dist/responsivePagination.umd.min.js",
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
