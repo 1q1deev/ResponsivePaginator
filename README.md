@@ -2,6 +2,9 @@
 
 Thanks to [Jason Watmore](https://github.com/cornflourblue) for the [pagination logic](https://github.com/cornflourblue/jw-paginate).
 
+## Demo
+[Demo Responsive Pagination](https://1q1deev.github.io/ResponsivePaginator/dist/demo)
+
 ## Installation
 
 Use [npm](https://www.npmjs.com/) to install Responsive Pagination.
