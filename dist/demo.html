@@ -1,42 +1,146 @@
-<meta charset="utf-8">
-<title>responsivePagination demo</title>
-<script src="https://unpkg.com/vue"></script>
-<script src="./responsivePagination.umd.js"></script>
-
-<div id="app">
-  <demo 
-    ref="ResponsivePaginationRef"
-    v-bind:total-items-prop="1000"
-    v-bind:class="'is-green'"></demo>
-</div>
-
-<script>
-new Vue({
-  components: {
-    demo: responsivePagination
-  }
-}).$mount('#app')
-</script>
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./responsivePagination.umd.js"></script>
+    <title>Responsive Pagination demo</title>
+  </head>
+  
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-.responsive-pagination.is-green a {
-  background-color: hsl(143, 100%, 34%);
-  border-color: hsl(143, 100%, 34%);
-  color: white;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-.responsive-pagination.is-green a.is-active {
-  background-color: white;
-  border-color: hsl(143, 100%, 34%);
-  color: hsl(143, 100%, 34%);
-}
-</style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    max-width: 1500px;
+    margin: 60px auto;
+  }
+  
+  .responsive-pagination.is-green a {
+    background-color: hsl(143, 100%, 34%);
+    border-color: hsl(143, 100%, 34%);
+    color: white;
+  }
+  
+  .responsive-pagination.is-green a.is-active {
+    background-color: white;
+    border-color: hsl(143, 100%, 34%);
+    color: hsl(143, 100%, 34%);
+  }
+
+  .responsive-pagination.is-red a {
+    background-color: hsl(0, 80%, 42%);
+    border-color: hsl(0, 80%, 42%);
+    color: white;
+  }
+  
+  .responsive-pagination.is-red a.is-active {
+    background-color: white;
+    border-color: hsl(0, 80%, 42%);
+    color: hsl(0, 80%, 42%);
+  }
+
+  .content {
+    flex:1 1 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  </style>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="content">
+          <p class="example"><span>v-bind:total-items-prop="1000"</span></p>
+          <p class="example"><span>v-bind:class="'is-green'"</span></p>
+        </div>
+        <responsive-pagination 
+          ref="ResponsivePaginationRef"
+          v-bind:total-items-prop="1000"
+          v-bind:class="'is-green'">
+        </responsive-pagination>
+        <div class="content">
+          <p class="example"><span>v-bind:total-items-prop="1000"</span></p>
+          <p class="example"><span>v-bind:multi-row-prop="2"</span></p>
+          <p class="example"><span>v-bind:class="'is-green'"</span></p>
+        </div>
+        <responsive-pagination 
+          ref="ResponsivePaginationRef"
+          v-bind:total-items-prop="1000"
+          v-bind:multi-row-prop="2"
+          v-bind:class="'is-green'">
+        </responsive-pagination>
+        <div class="content">
+          <p class="example"><span>v-bind:total-items-prop="1000"</span></p>
+          <p class="example"><span>v-bind:own-responsive-size-prop="{ small:10, normal:20, medium:22, large:26, extraLarge:36 }"</span></p>
+          <p class="example"><span>v-bind:class="'is-green'"</span></p>
+        </div>
+        <responsive-pagination 
+          ref="ResponsivePaginationRef"
+          v-bind:total-items-prop="1000"
+          v-bind:own-responsive-size-prop="{ small:10, normal:20, medium:22, large:24, extraLarge:30 }"
+          v-bind:class="'is-green'">
+        </responsive-pagination>
+        <div class="content">
+          <p class="example"><span>v-bind:total-items-prop="1000"</span></p>
+          <p class="example"><span>v-bind:type-prop="2"</span></p>
+          <p class="example"><span>v-bind:class="'is-green rounded'"</span></p>
+        </div>
+        <responsive-pagination 
+          ref="ResponsivePaginationRef"
+          v-bind:total-items-prop="1000"
+          v-bind:type-prop="2"
+          v-bind:class="'is-green rounded'">
+        </responsive-pagination>
+        <div class="content">
+          <p class="example"><span>v-bind:total-items-prop="1000"</span></p>
+          <p class="example"><span>v-bind:type-prop="3"</span></p>
+          <p class="example"><span>v-bind:class="'is-red rounded'"</span></p>
+        </div>
+        <responsive-pagination 
+          ref="ResponsivePaginationRef"
+          v-bind:total-items-prop="1000"
+          v-bind:type-prop="3"
+          v-bind:class="'is-red rounded'">
+        </responsive-pagination>
+        <div class="content">
+          <p class="example"><span>v-bind:total-items-prop="1000"</span></p>
+          <p class="example"><span>v-bind:responsive-size-prop="false"</span></p>
+          <p class="example"><span>v-bind:own-size-prop="24"</span></p>
+          <p class="example"><span>v-bind:responsive-row-prop="2"</span></p>
+          <p class="example"><span>v-bind:class="'is-red rounded'"</span></p>
+        </div>
+        <responsive-pagination 
+          ref="ResponsivePaginationRef"
+          v-bind:total-items-prop="1000"
+          v-bind:responsive-size-prop="false"
+          v-bind:own-size-prop="24"
+          v-bind:responsive-row-prop="2"
+          v-bind:class="'is-red rounded'">
+        </responsive-pagination>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        components: {
+          'responsive-pagination': responsivePagination
+        }
+      })
+    </script>
+  </body>
+</html>
